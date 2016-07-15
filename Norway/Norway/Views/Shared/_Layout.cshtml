@@ -22,7 +22,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
+                    <li class="active">@Html.ActionLink("主页", "Index", "Home")</li>
                     <li>@Html.ActionLink("简介", "About", "Home")</li>
                     <li>@Html.ActionLink("联系我们", "Contact", "Home")</li>
                 </ul>
@@ -32,13 +32,13 @@
 
     @RenderBody()
 
-    <footer>
+    <footer class="panel-footer">
         <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
     </footer>
-
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
