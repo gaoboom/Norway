@@ -26,5 +26,9 @@ namespace Norway.Controllers
 
             return View();
         }
+        public ActionResult FeedBack()
+        {
+            return View();
+        }
     }
 }
