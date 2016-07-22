@@ -13,6 +13,7 @@
         <div class="col-lg-12">
             @using (Html.BeginForm())
             {
+                @Html.ValidationSummary()
                 <p>Name:@Html.TextBoxFor(x=>x.Name)</p>
                 <p>Title:@Html.TextBoxFor(x=>x.Title)</p>
                 <p>Content:@Html.TextAreaFor(x=>x.Content)</p>

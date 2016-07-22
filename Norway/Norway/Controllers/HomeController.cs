@@ -34,7 +34,14 @@ namespace Norway.Controllers
         [HttpPost]
         public ActionResult FeedBack(FeedBack feedBack)
         {
-            return View("Thanks", feedBack);
+            if(ModelState.IsValid)
+            {
+                return View("Thanks", feedBack);
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
