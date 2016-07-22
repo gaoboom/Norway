@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Norway.Models;
 
 namespace Norway.Controllers
 {
@@ -29,6 +30,11 @@ namespace Norway.Controllers
         public ActionResult FeedBack()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult FeedBack(FeedBack feedBack)
+        {
+            return View("Thanks", feedBack);
         }
     }
 }
