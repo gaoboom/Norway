@@ -15,7 +15,7 @@ namespace Norway.Models
         public string Title { get; set; }
         [Required(ErrorMessage ="Please Enter The Content !")]
         public string Content { get; set; }
-
+        [Required(ErrorMessage = "Please Enter The Contact !")]
         public string Contact { get; set; }
         public DateTime PostTime { get; set; }
         public bool CheckStatus { get; set; }
