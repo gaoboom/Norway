@@ -14,6 +14,10 @@ namespace Norway.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public ActionResult List()
         {
             return View();
