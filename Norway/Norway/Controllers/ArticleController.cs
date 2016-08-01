@@ -15,7 +15,7 @@ namespace Norway.Controllers
         }
 
         /// <summary>
-        /// 
+        /// 文章列表页
         /// </summary>
         /// <returns></returns>
         public ActionResult List()
