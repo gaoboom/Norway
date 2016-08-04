@@ -77,5 +77,7 @@ namespace Norway.Models
         /// 上次登录IP
         /// </summary>
         public string LoginIP { get; set; }
+
+        public virtual UserGroup Group { get; set; }
     }
 }
