@@ -202,6 +202,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IDAL\InterfaceBaseRepository.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryType.cs" />
@@ -294,7 +295,6 @@
     <Folder Include="Common\" />
     <Folder Include="DAL\" />
     <Folder Include="IBLL\" />
-    <Folder Include="IDAL\" />
     <Folder Include="Views\Article\" />
   </ItemGroup>
   <ItemGroup>
