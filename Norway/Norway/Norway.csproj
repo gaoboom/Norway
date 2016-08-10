@@ -199,6 +199,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DataLibrary\Repository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -292,7 +293,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Common\" />
     <Folder Include="Core\" />
-    <Folder Include="DataLibrary\" />
     <Folder Include="Views\Article\" />
   </ItemGroup>
   <ItemGroup>
