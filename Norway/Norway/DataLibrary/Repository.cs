@@ -244,5 +244,150 @@ namespace Norway.DataLibrary
         }
 
         #endregion
+
+        //添加实体
+        #region Add
+
+        /// <summary>
+        /// 添加实体【立即保存】
+        /// </summary>
+        /// <param name="entity">实体</param>
+        /// <returns>受影响的对象的数目</returns>
+        public int Add(T entity)
+        {
+            return Add(entity, true);
+        }
+
+        /// <summary>
+        /// 添加实体
+        /// </summary>
+        /// <param name="entity">实体</param>
+        /// <param name="isSave">是否立即保存</param>
+        /// <returns>在“isSave”为True时返回受影响的对象的数目，为False时直接返回0</returns>
+        public int Add(T entity, bool isSave)
+        {
+            DbContext.Set<T>().Add(entity);
+            return isSave ? DbContext.SaveChanges() : 0;
+        }
+
+        #endregion
+
+        //更新实体
+        #region Update
+
+        /// <summary>
+        /// 更新实体【立即保存】
+        /// </summary>
+        /// <param name="entity">实体</param>
+        /// <returns>受影响的对象的数目</returns>
+        public int Update(T entity)
+        {
+            return Update(entity, true);
+        }
+
+        /// <summary>
+        /// 更新实体
+        /// </summary>
+        /// <param name="entity">实体</param>
+        /// <param name="isSave">是否立即保存</param>
+        /// <returns>在“isSave”为True时返回受影响的对象的数目，为False时直接返回0</returns>
+        public int Update(T entity, bool isSave)
+        {
+            DbContext.Set<T>().Attach(entity);
+            DbContext.Entry<T>(entity).State = EntityState.Modified;
+            return isSave ? DbContext.SaveChanges() : 0;
+        }
+        #endregion
+
+        //删除
+        #region Delete
+
+        /// <summary>
+        /// 删除实体【立即保存】
+        /// </summary>
+        /// <param name="entity">实体</param>
+        /// <returns>受影响的对象的数目</returns>
+        public int Delete(T entity)
+        {
+            return Delete(entity, true);
+        }
+
+        /// <summary>
+        /// 删除实体
+        /// </summary>
+        /// <param name="entity">实体</param>
+        /// <param name="isSave">是否立即保存</param>
+        /// <returns>在“isSave”为True时返回受影响的对象的数目，为False时直接返回0</returns>
+        public int Delete(T entity, bool isSave)
+        {
+            DbContext.Set<T>().Attach(entity);
+            DbContext.Entry<T>(entity).State = EntityState.Deleted;
+            return isSave ? DbContext.SaveChanges() : 0;
+        }
+
+        /// <summary>
+        /// 批量删除实体
+        /// </summary>
+        /// <param name="entities">实体集合</param>
+        /// <returns>受影响的对象的数目</returns>
+        public int Delete(IEnumerable<T> entities)
+        {
+            DbContext.Set<T>().RemoveRange(entities);
+            return DbContext.SaveChanges();
+        }
+
+        /// <summary>
+        /// 根据条件删除
+        /// </summary>
+        /// <param name="predicate">表达式</param>
+        /// <returns></returns>
+        public int Delete(Expression<Func<T, bool>> predicate)
+        {
+            var _entitys = FindList(predicate);
+            return Delete(_entitys);
+        }
+        #endregion
+
+        //记录数
+        #region Count
+
+        /// <summary>
+        /// 记录数
+        /// </summary>
+        /// <returns></returns>
+        public int Count()
+        {
+            return DbContext.Set<T>().Count();
+        }
+
+        /// <summary>
+        /// 记录数
+        /// </summary>
+        /// <param name="predicate">表达式</param>
+        /// <returns></returns>
+        public int Count(Expression<Func<T, bool>> predicate)
+        {
+            return DbContext.Set<T>().Count(predicate);
+        }
+        #endregion
+
+        /// <summary>
+        /// 记录是否存在
+        /// </summary>
+        /// <param name="predicate">表达式</param>
+        /// <returns></returns>
+        public bool IsContains(Expression<Func<T, bool>> predicate)
+        {
+            return Count(predicate) > 0;
+        }
+
+        /// <summary>
+        /// 保存数据【在Add、Upate、Delete未立即保存的情况下使用】
+        /// </summary>
+        /// <returns>受影响的记录数</returns>
+        public int Save()
+        {
+            return DbContext.SaveChanges();
+        }
     }
 }
