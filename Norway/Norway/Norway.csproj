@@ -195,13 +195,22 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
     <Compile Include="Auxiliary\OrderParam.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Core\Administrator.cs" />
+    <Compile Include="Core\BaseManager.cs" />
     <Compile Include="Core\ContextFactory.cs" />
     <Compile Include="Core\NowayContext.cs" />
+    <Compile Include="Core\Types\Paging.cs" />
+    <Compile Include="Core\Types\Response.cs" />
+    <Compile Include="Core\Users\Role.cs" />
+    <Compile Include="Core\Users\RoleManager.cs" />
+    <Compile Include="Core\Users\User.cs" />
+    <Compile Include="Core\Users\UserManager.cs" />
     <Compile Include="DataLibrary\Repository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -243,6 +252,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Member\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -294,6 +304,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Member\Controllers\" />
+    <Folder Include="Areas\Member\Models\" />
+    <Folder Include="Areas\Member\Views\Shared\" />
     <Folder Include="Common\" />
     <Folder Include="Views\Article\" />
   </ItemGroup>
