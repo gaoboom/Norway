@@ -207,6 +207,11 @@
     <Compile Include="Core\Category\CategoryGeneralManager .cs" />
     <Compile Include="Core\Category\CategoryLink.cs" />
     <Compile Include="Core\Category\CategoryLinkManager.cs" />
+    <Compile Include="Core\Category\CategoryManager.cs" />
+    <Compile Include="Core\Category\CategoryPage.cs" />
+    <Compile Include="Core\Category\CategoryPageManager.cs" />
+    <Compile Include="Core\Content\ContentType.cs" />
+    <Compile Include="Core\Content\ContentTypeManager.cs" />
     <Compile Include="Core\ContextFactory.cs" />
     <Compile Include="Core\NowayContext.cs" />
     <Compile Include="Core\Types\Paging.cs" />

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace Norway.Models
+namespace Norway.Core.Category
 {
     /// <summary>
     /// 栏目模型类

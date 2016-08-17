@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using Norway.Core.Users;
+using Norway.Core.Category;
+using Norway.Core.Content;
 
 namespace Norway.Core
 {
