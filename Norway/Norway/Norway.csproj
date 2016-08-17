@@ -202,6 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\Administrator.cs" />
+    <Compile Include="Core\AdministratorManager.cs" />
     <Compile Include="Core\BaseManager.cs" />
     <Compile Include="Core\Category\CategoryGeneral.cs" />
     <Compile Include="Core\Category\CategoryGeneralManager .cs" />
