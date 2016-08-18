@@ -1,24 +1,24 @@
 ﻿using System.Web.Mvc;
 
-namespace Norway.Areas.Member
+namespace Norway.Areas.Control
 {
-    public class MemberAreaRegistration : AreaRegistration 
+    public class ControlAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "Member";
+                return "Control";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Member_default",
-                "Member/{controller}/{action}/{id}",
+                "Control_default",
+                "Control/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional },
-                new string[] { "Norway.Areas.Member.Controllers" }
+                new string[] { "Norway.Areas.Control.Controllers" }
             );
         }
     }
