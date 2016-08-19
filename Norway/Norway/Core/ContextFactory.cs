@@ -15,12 +15,12 @@ namespace Norway.Core
         /// 获取当前线程的数据上下文
         /// </summary>
         /// <returns>数据上下文</returns>
-        public static NowayContext CurrentContext()
+        public static NorwayContext CurrentContext()
         {
-            NowayContext _nContext = CallContext.GetData("NowayContext") as NowayContext;
+            NorwayContext _nContext = CallContext.GetData("NowayContext") as NorwayContext;
             if (_nContext == null)
             {
-                _nContext = new NowayContext();
+                _nContext = new NorwayContext();
                 CallContext.SetData("NowayContext", _nContext);
             }
             return _nContext;

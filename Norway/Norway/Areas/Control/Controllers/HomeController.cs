@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Norway.Areas.Control.Controllers
 {
+    [AdminAuthorize]
     public class HomeController : Controller
     {
         // GET: Control/Home

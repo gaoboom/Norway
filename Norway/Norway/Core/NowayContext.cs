@@ -9,7 +9,7 @@ using Norway.Core.Content;
 
 namespace Norway.Core
 {
-    public class NowayContext:DbContext
+    public class NorwayContext:DbContext
     {
         /// <summary>
         /// 管理员集合
@@ -58,9 +58,9 @@ namespace Norway.Core
 
         #endregion
 
-        public NowayContext():base("DefaultConnection")
+        public NorwayContext():base("DefaultConnection")
         {
-            Database.SetInitializer<NowayContext>(new CreateDatabaseIfNotExists<NowayContext>());
+            Database.SetInitializer<NorwayContext>(new CreateDatabaseIfNotExists<NorwayContext>());
         }
     }
 }
