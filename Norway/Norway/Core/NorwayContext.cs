@@ -58,7 +58,7 @@ namespace Norway.Core
 
         #endregion
 
-        public NorwayContext():base("DefaultConnection")
+        public NorwayContext():base("NorwayContext")
         {
             Database.SetInitializer<NorwayContext>(new CreateDatabaseIfNotExists<NorwayContext>());
         }
