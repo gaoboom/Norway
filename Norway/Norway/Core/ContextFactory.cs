@@ -17,11 +17,11 @@ namespace Norway.Core
         /// <returns>数据上下文</returns>
         public static NorwayContext CurrentContext()
         {
-            NorwayContext _nContext = CallContext.GetData("NowayContext") as NorwayContext;
+            NorwayContext _nContext = CallContext.GetData("NorwayContext") as NorwayContext;
             if (_nContext == null)
             {
                 _nContext = new NorwayContext();
-                CallContext.SetData("NowayContext", _nContext);
+                CallContext.SetData("NorwayContext", _nContext);
             }
             return _nContext;
         }

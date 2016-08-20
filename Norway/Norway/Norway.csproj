@@ -221,7 +221,7 @@
     <Compile Include="Core\Content\ContentTypeManager.cs" />
     <Compile Include="Core\ContextFactory.cs" />
     <Compile Include="Core\General\Security.cs" />
-    <Compile Include="Core\NowayContext.cs" />
+    <Compile Include="Core\NorwayContext.cs" />
     <Compile Include="Core\Types\Paging.cs" />
     <Compile Include="Core\Types\Response.cs" />
     <Compile Include="Core\Users\Role.cs" />
