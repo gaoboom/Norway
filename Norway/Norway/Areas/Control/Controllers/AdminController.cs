@@ -65,5 +65,11 @@ namespace Norway.Areas.Control.Controllers
             Session.Clear();
             return RedirectToAction("Login");
         }
+
+
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }

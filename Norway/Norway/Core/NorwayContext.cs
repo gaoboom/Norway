@@ -60,7 +60,7 @@ namespace Norway.Core
 
         public NorwayContext():base("NorwayContext")
         {
-            Database.SetInitializer<NorwayContext>(new CreateDatabaseIfNotExists<NorwayContext>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<NorwayContext>());
         }
     }
 }
