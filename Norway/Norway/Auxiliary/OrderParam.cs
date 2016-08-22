@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Norway.Auxiliary
+﻿namespace Norway.Auxiliary
 {
     /// <summary>
     /// 排序参数
+    /// <remarks>
+    /// 2016.08.22检查优化
+    /// </remarks>
     /// </summary>
     public class OrderParam
     {

@@ -1,6 +1,5 @@
 namespace Norway.Migrations
 {
-    using Core.General;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -10,7 +9,7 @@ namespace Norway.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(Norway.Core.NorwayContext context)
@@ -27,9 +26,6 @@ namespace Norway.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            context.Administrators.AddOrUpdate(
-                new Core.Administrator { Accounts="admin",Password= Security.SHA256("123456"),LoginIP="0.0.0.0",LoginTime=null,CreateTime=DateTime.Now}
-                );
         }
     }
 }

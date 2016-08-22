@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 
 namespace Norway.Core
 {
     /// <summary>
     /// 管理员模型
+    /// <remarks>
+    /// 2016.08.22检查优化
+    /// </remarks>
     /// </summary>
     public class Administrator
     {
