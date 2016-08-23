@@ -5,7 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/site.css")
+    @Styles.Render("~/Content/bootstrap.css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -36,7 +37,7 @@
 
     <footer class="panel-footer">
         <p>&copy; @DateTime.Now.Year - FeelNorth.com</p>
-        <p>@Html.ActionLink("意见与建议", "FeedBack", "Home")</p>
+        <p>@Html.ActionLink("意见与建议", "FeedBack", "Home") @Html.ActionLink("管理中心", "Index","Control/Home")</p>
     </footer>
 
     @Scripts.Render("~/bundles/jquery")
