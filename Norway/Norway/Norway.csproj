@@ -299,6 +299,8 @@
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap-select.js.map" />
     <Content Include="Content\bootstrap-select.css.map" />
+    <Content Include="Areas\Control\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Control\Views\Admin\SideNavPartialView.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />

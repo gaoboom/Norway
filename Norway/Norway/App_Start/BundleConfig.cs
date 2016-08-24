@@ -22,15 +22,15 @@ namespace Norway
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
-
+            //常规页面css
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/Content/controlcss").Include(
+            //管理后台css
+            bundles.Add(new StyleBundle("~/Content/Control").Include(
                     "~/Content/bootstrap.css", 
-                    "~/Content/StyleControl.css"));
-
+                    "~/Content/controlcss.css"));
+            //管理后台js
             bundles.Add(new ScriptBundle("~/bundles/bootstrapplugin").Include(
                     "~/Scripts/moment-with-locales.js",
                     "~/Scripts/bootstrap-datetimepicker.js",
@@ -41,7 +41,7 @@ namespace Norway
                     "~/Scripts/bootstrap-treeview.min.js",
                     "~/Scripts/jquery.twbsPagination.js"
                 ));
-
+            //管理后台js对应的css
             bundles.Add(new StyleBundle("~/Content/bootstrapplugincss").Include(
                     "~/Content/bootstrap-datetimepicker.css",
                     "~/Content/bootstrap-dialog.css",

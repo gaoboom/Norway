@@ -71,5 +71,14 @@ namespace Norway.Areas.Control.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 管理员列表
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult ListJson()
+        {
+            return Json(adminManager.FindList());
+        }
     }
 }

@@ -1,27 +1,26 @@
 ﻿@model Norway.Areas.Control.Models.LoginViewModel
-
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理后台登陆 - 我的 ASP.NET 应用程序</title>
+    @Styles.Render("~/Content/controlcss.css")
     @Styles.Render("~/Content/bootstrap.css")
-    @Styles.Render("~/Content/site.css")
-    @Scripts.Render("~/bundles/modernizr")</head>
+    @Scripts.Render("~/bundles/modernizr")
+</head>
 <body>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
-
-    <div class="loginform container">
+    <div class="container">
         <div class="form-horizontal">
-            <h2 class="text-primary">登录</h2>
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("Login","Admin",FormMethod.Post,new { @class = "form-signin" }))
             {
+                <h2 class="text-primary">请登录管理后台</h2>
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group form-group-lg">
@@ -33,11 +32,10 @@
                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group form-group-lg">
-                    <input type="submit" value="登录" class="btn btn-default" />
+                    <input type="submit" value="登录" class="btn btn-lg btn-primary btn-block" />
                 </div>
             }
         </div>
-
     </div>
 </body>
 </html>

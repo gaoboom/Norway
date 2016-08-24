@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 系统管理</title>
-    @Styles.Render("~/Content/Control")
     @RenderSection("style", required: false)
-    @Scripts.Render("~/bundles/Control")
     @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @Styles.Render("~/Content/bootstrap.css")
+    @Styles.Render("~/Content/controlcss.css")
+    
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -52,7 +54,6 @@
             </div>
         </div>
     </div>
-
     <div class="container body-content">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-4">@RenderSection("SideNav", false)</div>
