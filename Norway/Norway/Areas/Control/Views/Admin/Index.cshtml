@@ -38,6 +38,7 @@
                     { title: "登录时间", field: "LoginTime", formatter: function (value) { return moment(value).format("YYYY-MM-DD HH:mm:ss") } },
                     { title: "登录IP", field: "LoginIP" },
                     { title: "创建时间", field: "CreateTime", formatter: function (value) { return moment(value).format("YYYY-MM-DD HH:mm:ss") } },
+                    { title: "操作", field: "AdministratorID", formatter: function (value, row, index) { return "<a href=\"javascript:void(0)\" onclick=\"ResetPassword(" + value + ",'" + row.Accounts + "')\">重置密码</a>" } }
                 ]
             });
             //表格结束
