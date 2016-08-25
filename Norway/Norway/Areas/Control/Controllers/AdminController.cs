@@ -1,6 +1,7 @@
 ﻿using Norway.Areas.Control.Models;
 using Norway.Core;
 using Norway.Core.General;
+using Norway.Core.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,6 +80,49 @@ namespace Norway.Areas.Control.Controllers
         public JsonResult ListJson()
         {
             return Json(adminManager.FindList());
+        }
+
+        /// <summary>
+        /// 添加【分部视图】
+        /// </summary>
+        /// <returns></returns>
+        public PartialViewResult AddPartialView()
+        {
+            return PartialView();
+        }
+
+        /// <summary>
+        /// 添加【Json】
+        /// </summary>
+        /// <param name="addAdmin"></param>
+        /// <returns></returns>
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public JsonResult AddJson(AddAdminViewModel addAdmin)
+        {
+            Response _res = new Response();
+            if (ModelState.IsValid)
+            {
+                if (adminManager.HasAccounts(addAdmin.Accounts))
+                {
+                    _res.Code = 0;
+                    _res.Message = "帐号已存在";
+                }
+                else
+                {
+                    Administrator _admin = new Administrator();
+                    _admin.Accounts = addAdmin.Accounts;
+                    _admin.CreateTime = System.DateTime.Now;
+                    _admin.Password = Security.SHA256(addAdmin.Password);
+                    _res = adminManager.Add(_admin);
+                }
+            }
+            else
+            {
+                _res.Code = 0;
+                _res.Message = General.GetModelErrorString(ModelState);
+            }
+            return Json(_res);
         }
     }
 }
