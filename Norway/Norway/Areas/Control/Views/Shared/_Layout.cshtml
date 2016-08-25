@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 系统管理</title>
 
-    <link href="~/Content/bootstrap-table.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap-table.css" rel="stylesheet" />
     <link href="/Content/bootstrap.css" rel="stylesheet" />
 
     <script src="/Scripts/jquery-1.10.2.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/bootstrap-table.js"></script>
     <script src="~/Scripts/bootstrap-table-locale-all.js"></script>
-    <script src="~/Scripts/moment.js"></script>
-    
-    @*@RenderSection("style", required: false)
-    
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/moment.js"></script>*@
     @Styles.Render("~/Content/bootstrap.css")
-    @Styles.Render("~/Content/controlcss.css")*@
-    
+    @Styles.Render("~/Content/ControlCss")
+    @Styles.Render("~/Content/bootstrapplugincss")
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/bundles/bootstrapplugin")
+
+    @RenderSection("style", required: false)
+    @RenderSection("scripts", required: false)
+
+
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -74,6 +80,6 @@
             <p>&copy; Ninesky v0.1 BASE BY 洞庭夕照 http://mzwhj.cnblogs.com</p>
         </footer>
     </div>
-    @RenderSection("scripts", required: false)
+
 </body>
 </html>

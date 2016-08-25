@@ -259,7 +259,7 @@
     <Content Include="Content\bootstrap-treeview.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\controlcss.css" />
+    <Content Include="Content\ControlCss.css" />
     <Content Include="Content\Images\1.png" />
     <Content Include="Content\Images\10.png" />
     <Content Include="Content\Images\11.png" />

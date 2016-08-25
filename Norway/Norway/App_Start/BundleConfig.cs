@@ -24,12 +24,11 @@ namespace Norway
                       "~/Scripts/respond.js"));
             //常规页面css
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
                       "~/Content/site.css"));
             //管理后台css
-            bundles.Add(new StyleBundle("~/Content/Control").Include(
-                    "~/Content/bootstrap.css", 
-                    "~/Content/controlcss.css"));
+            bundles.Add(new StyleBundle("~/Content/ControlCss").Include(
+                    "~/Content/ControlCss.css"
+                ));
             //管理后台js
             bundles.Add(new ScriptBundle("~/bundles/bootstrapplugin").Include(
                     "~/Scripts/moment-with-locales.js",
