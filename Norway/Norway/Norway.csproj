@@ -230,6 +230,7 @@
     <Compile Include="Core\Users\User.cs" />
     <Compile Include="Core\Users\UserManager.cs" />
     <Compile Include="DataLibrary\Repository.cs" />
+    <Compile Include="General.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
