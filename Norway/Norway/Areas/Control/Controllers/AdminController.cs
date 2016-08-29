@@ -92,7 +92,7 @@ namespace Norway.Areas.Control.Controllers
         }
 
         /// <summary>
-        /// 添加【Json】
+        /// 添加管理员【Json】
         /// </summary>
         /// <param name="addAdmin"></param>
         /// <returns></returns>
