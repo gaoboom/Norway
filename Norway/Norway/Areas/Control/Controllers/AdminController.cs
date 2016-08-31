@@ -182,5 +182,89 @@ namespace Norway.Areas.Control.Controllers
             }
             return Json(_res);
         }
+
+        /// <summary>
+        /// 重置密码【654321】
+        /// </summary>
+        /// <param name="id">管理员ID</param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult ResetPassword(int id)
+        {
+            string _password = "654321";
+            Response _resp = adminManager.ChangePassword(id, Security.SHA256(_password));
+            if (_resp.Code == 1) _resp.Message = "密码重置为：" + _password;
+            return Json(_resp);
+        }
+        /// <summary>
+        /// 重置密码批量【654321】
+        /// 
+        /// </summary>
+        /// <param name="ids">管理员ID列表</param>
+        /// <returns>
+        /// Code：0-失败，1-成功，2-部分成功
+        /// </returns>
+        [HttpPost]
+        public JsonResult ResetPasswordBatch(List<int> ids)
+        {
+            //明文密码
+            string _passwordPlain = "654321";
+            //密文
+            string _password = Security.SHA256(_passwordPlain);
+            int _total = ids.Count();
+            //重置密码的数量
+            int _resetNum = 0;
+            //重置密码的名称
+            string _resetNames = "";
+            Response _resp = new Response();
+            foreach (int id in ids)
+            {
+                _resp = adminManager.ChangePassword(id, _password);
+                if (_resp.Code == 1)
+                {
+                    _resetNum++;
+                    _resetNames += "[" + _resp.Data.Accounts + "] ";
+                }
+            }
+
+            if (_resetNum > 0)
+            {
+                if (_resetNum < _total) _resp.Code = 2;
+                else _resp.Code = 1;
+                _resp.Message = "共提交重置" + _total + "名管理员的密码,成功重置" + _resetNames + _resetNum + "名管理员的密码为“" + _passwordPlain + "”。";
+            }
+            else
+            {
+                _resp.Code = 0;
+                _resp.Message = "重置密码失败。";
+            }
+            return Json(_resp);
+        }
+
+        /// <summary>
+        /// 我的资料
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult MyInfo()
+        {
+            return View(adminManager.Find(Session["Accounts"].ToString()));
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult MyInfo(FormCollection form)
+        {
+            var _admin = adminManager.Find(Session["Accounts"].ToString());
+
+            if (_admin.Password != form["Password"])
+            {
+                _admin.Password = Security.SHA256(form["Password"]);
+                var _resp = adminManager.ChangePassword(_admin.AdministratorID, _admin.Password);
+                if (_resp.Code == 1) ViewBag.Message = "<div class=\"alert alert-success\" role=\"alert\"><span class=\"glyphicon glyphicon-ok\"></span>修改密码成功！</div>";
+                else ViewBag.Message = "<div class=\"alert alert-danger\" role=\"alert\"><span class=\"glyphicon glyphicon-remove\"></span>修改密码失败！</div>";
+            }
+            return View(_admin);
+        }
+
     }
 }

@@ -20,6 +20,19 @@
 
     <script type="text/javascript">
 
+        //重置密码方法
+        function ResetPassword(id, accounts) {
+            BootstrapDialog.confirm("确定重置" + accounts + "的密码", function (result) {
+                if (result) {
+                    $.post("@Url.Action("ResetPassword", "Admin")", { id: id }, function (data) {
+                        BootstrapDialog.alert(data.Message);
+                    }, "json");
+                }
+            });
+        };
+        //重置密码结束
+
+
         $(document).ready(function () {
 
             //表格
@@ -165,17 +178,6 @@
             });
             //删除按钮结束
 
-            //重置密码方法
-            function ResetPassword(id, accounts) {
-                BootstrapDialog.confirm("确定重置" + accounts + "的密码", function (result) {
-                    if (result) {
-                        $.post("@Url.Action("ResetPassword", "Admin")", { id: id }, function (data) {
-                            BootstrapDialog.alert(data.Message);
-                        }, "json");
-                    }
-                });
-            };
-            //重置密码结束
         });
     </script>
 }

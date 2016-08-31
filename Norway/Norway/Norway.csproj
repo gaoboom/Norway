@@ -305,6 +305,7 @@
     <Content Include="Areas\Control\Views\Admin\SideNavPartialView.cshtml" />
     <Content Include="Areas\Control\Views\Admin\AddPartialView.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Control\Views\Admin\MyInfo.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
