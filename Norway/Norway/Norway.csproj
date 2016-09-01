@@ -309,6 +309,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\Control\Views\Admin\MyInfo.cshtml" />
     <Content Include="Areas\Control\Views\Shared\Prompt.cshtml" />
+    <Content Include="Areas\Control\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Control\Views\Role\SideNavPartialView.cshtml" />
+    <Content Include="Areas\Control\Views\Role\Add.cshtml" />
+    <Content Include="Areas\Control\Views\Role\Modify.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
@@ -441,7 +445,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Control\Views\Role\" />
     <Folder Include="Areas\Member\Models\" />
     <Folder Include="Common\" />
     <Folder Include="Views\Article\" />
