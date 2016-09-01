@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LinqKit, Version=1.1.7.2, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.7.2\lib\net452\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -200,6 +204,7 @@
     <Compile Include="Areas\Control\Controllers\AdminController.cs" />
     <Compile Include="Areas\Control\Controllers\HomeController.cs" />
     <Compile Include="Areas\Control\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Control\Controllers\UserController.cs" />
     <Compile Include="Areas\Control\Models\AddAdminViewModel.cs" />
     <Compile Include="Areas\Control\Models\LoginViewModel.cs" />
     <Compile Include="Areas\Member\Controllers\HomeController.cs" />
@@ -445,6 +450,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Control\Views\User\" />
     <Folder Include="Areas\Member\Models\" />
     <Folder Include="Common\" />
     <Folder Include="Views\Article\" />
