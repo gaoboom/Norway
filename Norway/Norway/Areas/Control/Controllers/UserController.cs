@@ -79,5 +79,26 @@ namespace Norway.Areas.Control.Controllers
             return pagingUser;
         }
 
+        /// <summary>
+        /// 分页列表【json】
+        /// </summary>
+        /// <param name="roleID">角色ID</param>
+        /// <param name="username">用户名</param>
+        /// <param name="name">名称</param>
+        /// <param name="sex">性别</param>
+        /// <param name="email">Email</param>
+        /// <param name="pageIndex">页码</param>
+        /// <param name="pageSize">每页记录数</param>
+        /// <param name="order">排序</param>
+        /// <returns>Json</returns>
+        public ActionResult PageList(int? roleID, string username, string name, int? sex, string email, int? pageNumber, int? pageSize, int? order)
+        {
+            Paging<User> _pagingUser = new Paging<User>();
+            if (pageNumber != null && pageNumber > 0) _pagingUser.PageIndex = (int)pageNumber;
+            if (pageSize != null && pageSize > 0) _pagingUser.PageSize = (int)pageSize;
+            var _paging = userManager.FindPageList(_pagingUser, roleID, username, name, sex, email, null);
+            return Json(new { total = _paging.TotalNumber, rows = _paging.Items });
+        }
+
     }
 }
